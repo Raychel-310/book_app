@@ -4,7 +4,7 @@
       <tr>
         
         <td>
-          <%= link_to user_path(book_comment.user) do %>
+          <%= link_to user_path(book_comment) do %> 
             <%= image_tag book_comment.user.get_profile_image(80,80) %><br>
             <%= book_comment.user.name %>
           <% end %>
@@ -12,7 +12,7 @@
         <td><%= book_comment.body %></td>
         <td>
           <% if book_comment.user == current_user %>
-            <%= link_to "Destroy", book_book_comment_path(book, book_comment), method: :delete, class: "btn btn-danger pull-right", remote: true %>
+            <%= link_to "Destroy", book_book_comment_path(book_comment.book, book_comment), method: :delete, class: "btn btn-danger pull-right", remote: true, data: {"turbolinks" => false} %>
           <% end %>
         </td>
       </tr>

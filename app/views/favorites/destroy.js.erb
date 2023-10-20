@@ -1,0 +1,9 @@
+<!--$("#favorite_<%#=@book.id%>").html("<%#= j(render 'favorites/btn', book: @book) %>");-->
+<!--$('comments#counter').html("<%#= j(render 'book_comments/counter', book: @comment.book) %>")-->
+<!--$('comments#index').html("<%#= j(render 'book_comments/index', book: @comment.book) %>")-->
+<!--$('comments#textarea').val("")-->
+
+$(".favorite-<%= @book.id %>").html("<%= j(render 'favorites/btn', book: @book) %>");
+$('#comments-counter').html("<%= j(render 'book_comments/counter', book: @comment.book) %>");
+$('#comments-index').html("<%= j(render 'book_comments/index', book: @comment.book) %>");
+$('#comments-textarea').val("");
